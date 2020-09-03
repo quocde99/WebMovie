@@ -1,0 +1,37 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  .table_tr th{
+    text-align: center;
+  }
+  .btn__sua{
+    background-color: #3498DB ;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: all .5s;
+  }
+  .btn__sua:hover{
+    color:#000000;
+    background-color: #AEB6BF;
+  }
+  .btn__xoa{
+    background-color: #EC7063  ;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: all .5s;
+  }
+  .btn__xoa:hover{
+    color:#000000;
+    background-color: #AEB6BF;
+  }

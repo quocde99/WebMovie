@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import HeaderAdmin from "../src/Layouts/Header/index"
+import {Layout} from "antd"
+import SiderAdmin from './Layouts/Sider/index';
+import FooterAdmin from './Layouts/Footer';
+// router 
+import {BrowserRouter,Route,Switch} from "react-router-dom"
+import UserAdmin from './Layouts/Content/User';
+import DashBoardAdmin from "./Layouts/Content/DashBoard"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <HeaderAdmin></HeaderAdmin>
+        <Layout>
+          <SiderAdmin></SiderAdmin>
+          <Layout>
+            <Switch>
+              <Route exact path="/" component={DashBoardAdmin}></Route>
+              <Route exact path="/user" component={UserAdmin}></Route>
+            </Switch>
+         
+          <FooterAdmin></FooterAdmin>
+          </Layout>
+      </Layout>
+    </Layout>
+    </BrowserRouter>
   );
 }
 
