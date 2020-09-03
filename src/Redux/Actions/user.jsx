@@ -30,7 +30,7 @@ import {userService} from "../../Service/index"
       })
     }
  }
- // dispatch loading 
+ // dispatch loading all user
  export const loading = ()=>{
     return (dispatch)=>{
       dispatch({
@@ -51,3 +51,11 @@ import {userService} from "../../Service/index"
        })
     }
  }
+  // dispatch loading userdetail
+  export const loadingDetail = ()=>{
+   return (dispatch)=>{
+     dispatch({
+        type:ActionType.GET_USERSDETAIL_REQUEST
+     })
+   }
+}

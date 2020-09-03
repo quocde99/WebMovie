@@ -2,7 +2,7 @@ import * as ActionType from "../Types/type"
 const initalValue ={
     listUser : [],
     searchUser : [],
-    userDetails : {},
+ //   userDetails : {},
     loading: false,
     error: false
 }
@@ -24,10 +24,10 @@ const ListUser=(state = initalValue, action) => {
             state.searchUser = action.data;
             return {...state}
         }
-        case ActionType.GET_USER_DETAIL:{
-            state.userDetails = action.data;
-            return {...state}
-        }
+        // case ActionType.GET_USER_DETAIL:{
+        //     state.userDetails = action.data;
+        //     return {...state}
+        // }
         default:
             return state;
     }

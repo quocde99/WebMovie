@@ -6,6 +6,7 @@ import * as style from "../ListUser/index.module.css";
 import Pagination from "../../../Layouts/Pagination/index";
 import * as Action from "../../../Redux/Actions/user"
 import RepairUser from "../RepairUser/index"
+import userDetail from '../../../Redux/Reducer/userDetail';
 class ListUser extends Component {
   constructor(){
     super();
@@ -16,9 +17,12 @@ class ListUser extends Component {
         newsPerPage: 30,
         // từ tìm kiếm
         search:'',
+        // sưae
         visable: false,
+        //xóa
+        visableDelete:false,
         // lưu tên tài khoản khi được chọn
-        taiKhoan :''
+        taiKhoan :null
     }
   }
     // change page 
@@ -33,15 +37,7 @@ class ListUser extends Component {
           visable:true,
           taiKhoan:taiKhoan
         })
-        //const user = {taiKhoan:taiKhoan}
-        //this.props.dispatch(Action.getDetailUser(user))
-      //  console.log(user);
     }
-    // truyền data qua cho modal sửa
-    // userDetail(taiKhoan){
-    //   const user = {taiKhoan:taiKhoan}
-    //   this.props.dispatch(Action.getDetailUser(user))
-    // }
     // ok của modal 
     handleOk=()=>{
       this.setState({
@@ -50,6 +46,7 @@ class ListUser extends Component {
     }
     handleCancel=()=>{
       this.setState({
+        taiKhoan:'',
         visable:false
       })
     }
@@ -78,11 +75,11 @@ class ListUser extends Component {
       })
     }
     //submit
-    handleClick = (event)=>{
-      // dispatch data
-      this.props.dispatch(Action.searchUser(this.state.search))
-      // gán data hiển thị 
-    }
+    // handleClick = (event)=>{
+    //   // dispatch data
+    //   this.props.dispatch(Action.searchUser(this.state.search))
+    //   // gán data hiển thị 
+    // }
     render() {
        // xét title
        document.title = "Danh sách người dùng";
@@ -113,7 +110,7 @@ class ListUser extends Component {
         
         return (
             <div>
-                <form 
+                {/* <form 
                 style={{display:"flex"}}>
                     <Input 
                     size="large" 
@@ -128,7 +125,7 @@ class ListUser extends Component {
                     icon={<SearchOutlined />}>
                         Tìm kiếm 
                     </Button>
-                </form>
+                </form> */}
               <RepairUser visable={this.state.visable} handleOk={this.handleOk} taiKhoan={this.state.taiKhoan}  handleCancel={this.handleCancel}></RepairUser>
             <table className={style.table}>
               <thead>
