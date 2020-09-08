@@ -1,0 +1,16 @@
+.circle{
+    height: 50px;
+    width: 50px;
+    color:white;
+    border-radius: 50%;
+    position: relative;
+}
+.card{
+    border-radius: 50%;
+}
+.icons{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

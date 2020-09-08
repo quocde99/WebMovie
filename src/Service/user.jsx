@@ -4,7 +4,7 @@ class UserService{
     fetchUser(){
         return  Axios({
             method :"GET",
-            url:"http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01",
+            url:"http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP04",
         })
     }
     searchUser(userName){

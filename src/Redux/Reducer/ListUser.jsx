@@ -1,7 +1,7 @@
 import * as ActionType from "../Types/type"
 const initalValue ={
     listUser : [],
-    searchUser : [],
+    //searchUser : [],
  //   userDetails : {},
     loading: false,
     error: false

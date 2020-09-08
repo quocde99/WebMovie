@@ -6,6 +6,7 @@ const init = {
 const userDetail =(state = init,action)=> {
     switch (action.type) {
         case ActionType.GET_USERSDETAIL_REQUEST :{
+            state.userDetail = {}
             return {...state,loadingDetail:true}
         }
         case ActionType.GET_USER_DETAIL:

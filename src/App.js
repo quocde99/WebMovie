@@ -17,8 +17,8 @@ function App() {
           <SiderAdmin></SiderAdmin>
           <Layout>
             <Switch>
-              <Route exact path="/" component={DashBoardAdmin}></Route>
-              <Route exact path="/user" component={UserAdmin}></Route>
+              <Route exact path="/admin/" component={DashBoardAdmin}></Route>
+              <Route exact path="/admin/user" component={UserAdmin}></Route>
             </Switch>
          
           <FooterAdmin></FooterAdmin>

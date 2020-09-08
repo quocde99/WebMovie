@@ -18,7 +18,7 @@ export default class HeaderAdmin extends Component {
                             size="large" icon={<UserOutlined />} />
                     Quoc De Admin</a></p>
                 <div className={Style.dropdowncontent}>
-                    <a href="#">Đăng xuất</a>
+                    <a>Đăng xuất</a>
                 </div>
             </div>
         </Header>

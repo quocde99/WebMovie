@@ -16,7 +16,7 @@ export default class SiderAdmin extends Component {
                   >
                    <Menu mode="inline">
                        <Menu.Item key="dashboard">
-                             <Link to="/">
+                             <Link to="/admin">
                            <span>
                            <DashboardOutlined />
                            </span>
@@ -27,7 +27,7 @@ export default class SiderAdmin extends Component {
                            
                        </Menu.Item>
                         <Menu.Item key="user">
-                            <Link to="/user">
+                            <Link to="/admin/user">
                             <span>
                            <UserOutlined />
                            </span>
@@ -36,7 +36,7 @@ export default class SiderAdmin extends Component {
                            </span>
                             </Link>
                        </Menu.Item>
-                       <Menu.Item key="movie">
+                       <Menu.Item key="/admin/movie">
                            <span>
                            <UserOutlined />
                            </span>
