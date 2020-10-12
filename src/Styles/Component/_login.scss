@@ -1,0 +1,100 @@
+.login{
+    .text__register p{
+        padding: 15px 0;
+        a{
+            color: #455CA8;
+        }
+        a:hover{
+            color:#F74933;
+        }
+    }
+    .error{
+        margin-bottom: 10px;
+    }
+    .modal-body{
+        //padding-bottom: 30px;
+        .social{
+            margin-bottom: 20px;
+            .circle{
+                height: 50px;
+                width: 50px;
+                background-color: #EEEEEE;
+                color: #FFFFFF;
+                border-radius: 100px;
+                display: inline-block;
+                margin: 0 17px;
+                padding: 15px;
+                svg{
+                    vertical-align: baseline;
+                }
+            }  
+            .github .google .facebook{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                text-align: center;
+            }
+            .google{
+                background-color: #F74933;
+            }
+            .facebook{
+                background-color: #455CA8;
+            }
+            .github{
+                background-color: #403A3A;
+            }
+            .facebook:hover{
+                background-color: #6E83CD;
+            }
+            .google:hover{
+                background-color: #FF7566;
+            }
+            .github:hover{
+                background-color: #4D4D4d;;
+            }
+        } 
+    }
+    .loginBox{
+        .btn-login{
+            background-color: getColor('color-orange2');
+            border-color: getColor('color-orange2');
+            border-width: 0;
+            color: #FFFFFF;
+            display: block;
+            margin: 0 auto;
+            //padding: 15px 50px;
+            text-transform: uppercase;
+            width: 100%;
+            }
+        .btn-login:hover{
+            background-color: getColor('color-orange1');
+            color:#ffffff;
+        }
+        .form-control{
+            border-radius: 3px;
+            background-color: rgba(0, 0, 0, 0.09);
+            box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.09) inset;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+        .form-control:hover{
+            background-color: rgba(0,0,0,.16);
+        }
+        .form-control:focus{
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04) inset;
+            background-color: rgba(0,0,0,0.23);
+            color: #FFFFFF;
+        }
+        .form input[type="text"], .form input[type="password"] {
+            border-radius: 3px;
+            border: none;
+            color: #333333;
+            font-size: 16px;
+            height: 46px;
+            margin-bottom: 5px;
+            padding: 13px 12px;
+            width: 100%;
+        }
+    }
+}

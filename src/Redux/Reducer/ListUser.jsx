@@ -20,14 +20,9 @@ const ListUser=(state = initalValue, action) => {
             return {...state,loading:false,error:true}
         }
         case ActionType.SEARCH_USER:{
-            console.log('search',action.data);
             state.searchUser = action.data;
             return {...state}
         }
-        // case ActionType.GET_USER_DETAIL:{
-        //     state.userDetails = action.data;
-        //     return {...state}
-        // }
         default:
             return state;
     }

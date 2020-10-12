@@ -43,7 +43,6 @@ import {userService} from "../../Service/index"
  export const getDetailUser = (userName)=>{
     return (dispatch)=>{
        userService.getUserDetail(userName).then((result)=>{
-            //console.log(result.data);
             dispatch(createAction(ActionType.GET_USER_DETAIL,result.data))
        })
        .catch((err)=>{
@@ -56,6 +55,47 @@ import {userService} from "../../Service/index"
    return (dispatch)=>{
      dispatch({
         type:ActionType.GET_USERSDETAIL_REQUEST
+     })
+   }
+}
+// đăng nhập
+export const signIn = (user)=>{
+   return (dispatch)=>{
+      userService.signIn(user).then((result)=>{
+         dispatch(createAction(ActionType.FETCH_CREDENTIALS,result.data))
+         localStorage.setItem('credentials',JSON.stringify(result.data))
+      })
+      .catch((err)=>{
+         dispatch(createAction(ActionType.EROR_FETCH_CREDENTIALS,null))
+      })
+   }
+}
+export const signUp = (user) =>{
+   return (dispatch)=>{
+      userService.signUp(user).then((result)=>{
+          dispatch(createAction(ActionType.SIGN_UP,result.data))
+          localStorage.setItem('credentials',JSON.stringify(result.data))
+      })
+      .catch((err)=>{
+         console.log(err);
+      })
+   }
+}
+// xem chi tiets lịch chiếu checkout
+export const getLichChieu = (id) =>{
+   return (dispatch)=>{
+      userService.getLichChieu(id).then((result)=>{
+         dispatch(createAction(ActionType.GET_LICH_CHIEU,result.data))
+      })
+      .catch((err)=>{
+         console.log(err);
+      })
+   }
+}
+export const loaddingThongTinLichChieu = ()=>{
+   return (dispatch)=>{
+     dispatch({
+        type:ActionType.LOADING_GET_THONG_TIN_LICH_CHIEU
      })
    }
 }

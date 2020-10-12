@@ -1,0 +1,7 @@
+.title{
+    color: getColor('color-orange1');
+    &:hover{
+        font-size: 30px;
+        transition: all .5s;
+    }
+}
