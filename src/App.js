@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 // router 
 import {BrowserRouter,Route,Switch} from "react-router-dom";
 import HomeAdmin from './Screens/Admin/Home';
@@ -10,20 +10,20 @@ import ChiTietPhim from './Screens/Clients/ChiTietPhim';
 import {useDispatch} from "react-redux";
 import {FETCH_CREDENTIALS} from "./Redux/Types/type";
 import {createAction} from "./Redux/Actions/index"
-import FooterClinet from './Screens/Clients/Footer';
 import DatGhe from './Screens/Clients/DatGhe';
+import {setToken} from "./Utils/axiosClient"
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    function getLocal(){
+    if(localStorage.getItem("credentials"))
+    {
       const credentials = localStorage.getItem("credentials");
-      if(credentials)
+      if(JSON.parse(credentials))
       {
         dispatch(createAction(FETCH_CREDENTIALS,JSON.parse(credentials)))
+        setToken(JSON.parse(credentials).accessToken)
       }
-    }
-    getLocal()
-  }, [])
+    }}, [])
   return (
     <BrowserRouter>
       <HeaderClient/>

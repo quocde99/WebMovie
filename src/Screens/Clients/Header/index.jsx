@@ -12,6 +12,7 @@ export default function HeaderClient() {
     const [smShow,setsmShow] = useState(false);
     const dispatch = useDispatch();
     const creadential = useSelector(state => state.UserReducer.cretidentals);
+    console.log(creadential);
     const [cre,setCre] = useState(creadential);
     useEffect(() => {
         setsmShow(false)
@@ -42,6 +43,9 @@ export default function HeaderClient() {
                                     <Dropdown.Item>
                                            <Link to="/">Thông tin cá nhân</Link>
                                            </Dropdown.Item>
+                                           {creadential.maLoaiNguoiDung==="QuanTri"?   <Dropdown.Item>
+                                           <Link to="/admin">Quản Trị</Link>
+                                           </Dropdown.Item> : null}
                                         <Dropdown.Item 
                                         onClick={()=>{
                                             localStorage.removeItem("credentials"); 

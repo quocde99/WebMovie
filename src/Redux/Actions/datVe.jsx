@@ -10,3 +10,9 @@ export const addDanhSachVe = (itemVe)=>{
        dispatch(createAction(ActionType.XOA_DANH_SACH_VE,item))
     }
  }
+ //  đặt vé
+ export const datVe =()=>{
+    return (dispatch)=>{
+      (dispatch(createAction(ActionType.DAT_VE)))
+    }
+ }

@@ -1,16 +1,17 @@
-import Axios from "axios"
-
+//import Axios from "axios"
+import axiosClient from "../Utils/axiosClient"
 class MovieService{
     getMovie(){
-        return Axios({
+        return axiosClient({
             method:"GET",
-            url:"https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP04"
+            url:"QuanLyPhim/LayDanhSachPhim?maNhom=GP04"
         })
     }
+    //https://movie0706.cybersoft.edu.vn/api/
     getDetailMovie(id){
-        return Axios({
+        return axiosClient({
             method:"GET",
-            url:`https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`
+            url:`QuanLyPhim/LayThongTinPhim?MaPhim=${id}`
         })
     }
 }

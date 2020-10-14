@@ -1,37 +1,37 @@
-import Axios from "axios"
+import axiosClient from "../Utils/axiosClient"
 
 class UserService{
     fetchUser(){
-        return  Axios({
+        return  axiosClient({
             method :"GET",
-            url:"https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP04",
+            url:"QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP04",
         })
     }
     searchUser(userName){
-       return Axios({
+       return axiosClient({
         method:"GET",
-        url:`https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP01&tuKhoa=${userName}`
+        url:`QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP01&tuKhoa=${userName}`
        })
     }
     //lấy thông tin người dùng
     getUserDetail(userName){
-        return Axios({
+        return axiosClient({
             method:'POST',
-            url:"https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan",
+            url:"QuanLyNguoiDung/ThongTinTaiKhoan",
             data: userName
         })
     }
     // đăng nhập 
     signIn(user){
-        return Axios({
+        return axiosClient({
             method:'POST',
-            url:"https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
+            url:"QuanLyNguoiDung/DangNhap",
             data: user
         })
     }
     // Đăng ký 
     signUp(user){
-        return Axios({
+        return axiosClient({
             method:"POST",
             url:"https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy",
             data: user
@@ -39,7 +39,7 @@ class UserService{
     }
     // Đặt ghế 
     getLichChieu(idLichChieu){
-        return Axios({
+        return axiosClient({
             method:"GET",
             url:`https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${idLichChieu}`
         })

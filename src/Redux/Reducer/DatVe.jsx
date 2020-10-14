@@ -11,10 +11,13 @@ const DatVeReducer = (state= init,action)=>{
                // const temp = state.danhSachVe.push(action.data)
                 return { ...state,danhSachVe:state.danhSachVe.concat(action.data)}//,danhSachVe:tempArr}
         case Type.XOA_DANH_SACH_VE:
-            const index = state.danhSachVe.findIndex(p=>p.maGhe == action.maGhe)
+            const index = state.danhSachVe.findIndex(p=>p.maGhe === action.maGhe)
             const dssp = [...state.danhSachVe]
             dssp.splice(index,1)
             return {...state,danhSachVe:dssp}
+        case Type.DAT_VE:
+            state.danhSachVe = []
+            return {...state}
         default:
             return {...state};
     }

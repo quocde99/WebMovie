@@ -16,6 +16,7 @@ export default function DatGhe(props) {
   //console.log(danhSachVe);
   const userName = JSON.parse(localStorage.getItem("credentials"));
   const dispatch = useDispatch();
+  const idLichChieu = props.match.params.idLichChieu;
   const [tien,setTien] = useState(0)
   useEffect(() => {
     dispatch(loaddingThongTinLichChieu())
@@ -118,15 +119,15 @@ export default function DatGhe(props) {
       </div>
       <div className="checkout__ghe">
         <div className="popcorn">
-          <img src={popcorn} alt />
+          <img src={popcorn} alt="popcorn" />
           <p>Chọn combo</p>
         </div>
         <p>0 đ</p>
       </div>
       <div className="checkout__form">
-        <input type="text" name id placeholder="Email" />
+        <input type="text"  placeholder="Email" />
         <br />
-        <input type="text" name id placeholder="Phone" />
+        <input type="text"  placeholder="Phone" />
         <br />
         <p>Mã giảm giá </p>
         <div className="checkout__giamgia">
@@ -134,7 +135,7 @@ export default function DatGhe(props) {
           <button>Áp dụng</button>
         </div>
       </div>
-      <ButtonDatVe danhSachVe={danhSachVe} />
+      <ButtonDatVe idLichChieu={idLichChieu} userName={userName} danhSachVe={danhSachVe} />
     </div>
   </div>
 </div>

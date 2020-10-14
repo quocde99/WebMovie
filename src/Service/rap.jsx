@@ -1,22 +1,22 @@
-import Axios from "axios"
+import axiosClient from "../Utils/axiosClient"
 
  class RapService{
        getHeThongRap(){
-         return Axios({
+         return axiosClient({
              method:'GET',
-             url:'https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap'
+             url:'QuanLyRap/LayThongTinHeThongRap'
          });
      }
      getLayThongTinCumRapTheoHeThong(tenHeThongRap){
-        return Axios({
+        return axiosClient({
             method:"GET",
-            url:`https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${tenHeThongRap}`
+            url:`QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${tenHeThongRap}`
         });
     }
     getLayThongTinLichChieuHeThongRap(maRap){
-        return Axios({
+        return axiosClient({
             method:"GET",
-            url:`https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maRap}&maNhom=GP04`
+            url:`QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maRap}&maNhom=GP04`
         })
     }
  }
