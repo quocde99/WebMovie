@@ -23,7 +23,7 @@ export default function ChiTietPhim(props) {
         return (
             <section className="detail">
                 <div className="detail__bg" />
-                <div className="container">
+                <div className="container flip-horizontal-bottom">
                     <div className="row">
                         <div className="col-3 detail__img">
                             <img src={detail.hinhAnh} alt="Lỗi" />

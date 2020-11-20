@@ -15,19 +15,7 @@ export default function LoginPageClient(props) {
     const {handleChangeScreen} = props;
     const dispatch = useDispatch();
     const creadential = useSelector(state => state.UserReducer.cretidentals);
-    // xử lý thông báo đăng nhập
-    // messeage
-    const handleSignIn= ()=>{
-        if(creadential!==null){
-            message.success('Đăng nhập thành công :)');
-        }
-        else{
-            message.error("Sai tên đăng nhập hoặc mật khẩu !")
-        }
-    }
     if(creadential!==null){
-     //  handleSignIn()
-        // message.success('Đăng nhập thành công :)');
        return <Redirect to="/" />
     }
     return (
@@ -43,7 +31,6 @@ export default function LoginPageClient(props) {
                     }}
                     onSubmit={(value) => {
                         dispatch(signIn(value))
-                           // message.error("Sai tên đăng nhập hoặc mật khẩu !")
                       }}
                         validationSchema={DangNhap}
                     >

@@ -1,9 +1,4 @@
 .myCarousel.carousel.slide{
-    //margin-top: 20px;
-    //position: relative;
-    // .carousel{
-    //     position: relative;
-    // }
     .btn-play{
         position: absolute;
         top: 50%;
@@ -30,5 +25,12 @@
         .active{
             background-color: getColor('color-orange1');
         }
+    }
+}
+@media screen and (max-width:600px){
+    .myCarousel{
+      img{
+          height: 100%;
+      }
     }
 }

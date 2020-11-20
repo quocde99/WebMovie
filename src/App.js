@@ -13,6 +13,7 @@ import {createAction} from "./Redux/Actions/index"
 import DatGhe from './Screens/Clients/DatGhe';
 import {setToken} from "./Utils/axiosClient"
 import LoginPage from './Screens/Clients/LoginPage';
+import Error404 from './Screens/Clients/Error';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/login" component={LoginPage}></Route>
         <Route  path="/admin" component={HomeAdmin}></Route>
         <Route path="/checkout/:idLichChieu" component={DatGhe}></Route>
+        <Route path="*" component={Error404}></Route>
       </Switch>
     </BrowserRouter>
   );

@@ -68,7 +68,8 @@ export const signIn = (user)=>{
       })
       .catch((err)=>{
          dispatch(createAction(ActionType.EROR_FETCH_CREDENTIALS,null))
-         message.error("Sai tên đăng nhập hoặc mật khẩu !")
+         // hiển thị lỗi
+         message.error(err.response.data)
       })
    }
 }
@@ -77,9 +78,11 @@ export const signUp = (user) =>{
       userService.signUp(user).then((result)=>{
           dispatch(createAction(ActionType.SIGN_UP,result.data))
           localStorage.setItem('credentials',JSON.stringify(result.data))
+          message.success('Đăng ký thành công :)');
       })
       .catch((err)=>{
-         console.log(err);
+        // console.log(err);
+         message.error(err.response.data)
       })
    }
 }
