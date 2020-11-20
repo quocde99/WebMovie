@@ -12,7 +12,6 @@ export default function HeaderClient() {
     const [smShow,setsmShow] = useState(false);
     const dispatch = useDispatch();
     const creadential = useSelector(state => state.UserReducer.cretidentals);
-    console.log(creadential);
     const [cre,setCre] = useState(creadential);
     useEffect(() => {
         setsmShow(false)
@@ -58,11 +57,18 @@ export default function HeaderClient() {
                                 </Dropdown>
                             </Nav.Link>
                                 :
-                                <Nav.Link className="header__link" onClick={
-                                    () => { setsmShow(!smShow) }
-                                }>
-                                    <img className="avatar" src={ava} />
-                              Đăng Nhập</Nav.Link>
+                                <Nav.Link className="header__link" 
+                                // onClick={
+                                //     () => { setsmShow(!smShow) }
+                                // } 
+                                
+                                >
+                                    
+                                    <Link to="/login" >
+                                        <img className="avatar" src={ava} />
+                                        Đăng nhập
+                                    </Link>
+                            </Nav.Link>
                         }
                     </Nav>
             </Navbar.Collapse>

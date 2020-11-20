@@ -44,7 +44,8 @@
         border:1px solid #ffffff;
         border-radius:50%;
     }
-    .header__nav .header__link{
+    .header__nav .header__link a{
+        text-decoration: none;
         color: #000000;
         transition: all 0.5s;
     }

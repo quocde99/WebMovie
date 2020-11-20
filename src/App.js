@@ -12,6 +12,7 @@ import {FETCH_CREDENTIALS} from "./Redux/Types/type";
 import {createAction} from "./Redux/Actions/index"
 import DatGhe from './Screens/Clients/DatGhe';
 import {setToken} from "./Utils/axiosClient"
+import LoginPage from './Screens/Clients/LoginPage';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
       <Switch >
         <Route exact path="/" component={HomeClient}></Route>
         <Route  path="/detail/:movieId" component={ChiTietPhim}></Route>
+        <Route path="/login" component={LoginPage}></Route>
         <Route  path="/admin" component={HomeAdmin}></Route>
         <Route path="/checkout/:idLichChieu" component={DatGhe}></Route>
       </Switch>

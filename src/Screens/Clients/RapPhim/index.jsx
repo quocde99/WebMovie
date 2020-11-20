@@ -22,10 +22,9 @@ export default function RapPhim() {
     const [stateCumRap,setCumRap] =useState("bhd-star-cineplex-bitexco")
     const renderHeThongRap = () => {
         return listHeThongRap.map((item, index) => {
-            return  <a className="nav-link active"
+            return  <a key={index} className="nav-link active"
             onClick={()=>{
-                setMaHeThongRap(item.maHeThongRap)
-                // setCumRap(thongTinLichChieu[0].lstCumRap)
+                setMaHeThongRap(item.maHeThongRap)  
             }}
             >
             <img className="calender__img" key={index} src={item.logo} alt={item.biDanh} />

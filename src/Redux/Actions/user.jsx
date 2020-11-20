@@ -1,7 +1,7 @@
 import {createAction} from "./index";
 import * as ActionType from "../Types/type";
 import {userService} from "../../Service/index"
-
+import { message } from 'antd';
 
 // async action 
 // lấy danh sách user
@@ -64,9 +64,11 @@ export const signIn = (user)=>{
       userService.signIn(user).then((result)=>{
          dispatch(createAction(ActionType.FETCH_CREDENTIALS,result.data))
          localStorage.setItem('credentials',JSON.stringify(result.data))
+         message.success('Đăng nhập thành công :)');
       })
       .catch((err)=>{
          dispatch(createAction(ActionType.EROR_FETCH_CREDENTIALS,null))
+         message.error("Sai tên đăng nhập hoặc mật khẩu !")
       })
    }
 }
