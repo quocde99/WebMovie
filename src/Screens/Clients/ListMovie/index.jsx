@@ -10,7 +10,7 @@ export default function ListMovie(props) {
     const loadding = useSelector(state => state.ListMovie.loading);
     const showListMovie = (list)=>{
         return list.slice(4,16).map((items,index)=>{
-            return (<div  className="col-6 col-sm-3 movie__items">
+            return (<div  className="col-12 col-sm-6 col-md-3 movie__items">
                 <Movie item = {items} key={index.toString()}/>
             </div>) 
         })

@@ -25,10 +25,10 @@ export default function ChiTietPhim(props) {
                 <div className="detail__bg" />
                 <div className="container flip-horizontal-bottom">
                     <div className="row">
-                        <div className="col-3 detail__img">
+                        <div className="col-12 col-lg-3 detail__img">
                             <img src={detail.hinhAnh} alt="Lỗi" />
                         </div>
-                        <div className="col-7 detail__content">
+                        <div className="col-12 col-lg-9 detail__content">
                             <p>19.06.2020</p>
                             <h5>{detail.tenPhim}</h5>
                             <p>100 phút - 0 IMDb - 2D/Digital</p>
